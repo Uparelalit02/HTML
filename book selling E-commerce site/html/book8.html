@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<style>
+    input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+    
+    input[type=text]:focus {
+        width: 100%;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    .rating {
+        font-family: Arial;
+        margin: 0 auto;
+        /* Center website */
+        max-width: 800px;
+        /* Max width */
+        padding: 20px;
+    }
+    
+    .heading {
+        font-size: 25px;
+        margin-right: 25px;
+    }
+    
+    .fa {
+        font-size: 25px;
+    }
+    
+    .checked {
+        color: orange;
+    }
+    /* Three column layout */
+    
+    .side {
+        float: left;
+        width: 15%;
+        margin-top: 10px;
+    }
+    
+    .middle {
+        margin-top: 10px;
+        float: left;
+        width: 70%;
+    }
+    /* Place text to the right */
+    
+    .right {
+        text-align: right;
+    }
+    /* Clear floats after the columns */
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .search {
+        text-align: center;
+    }
+    /* The bar container */
+    
+    .bar-container {
+        width: 100%;
+        background-color: #f1f1f1;
+        text-align: center;
+        color: white;
+    }
+    /* Individual bars */
+    
+    .bar-5 {
+        width: 60%;
+        height: 18px;
+        background-color: #4CAF50;
+    }
+    
+    .bar-4 {
+        width: 30%;
+        height: 18px;
+        background-color: #2196F3;
+    }
+    
+    .bar-3 {
+        width: 10%;
+        height: 18px;
+        background-color: #00bcd4;
+    }
+    
+    .bar-2 {
+        width: 4%;
+        height: 18px;
+        background-color: #ff9800;
+    }
+    
+    .bar-1 {
+        width: 15%;
+        height: 18px;
+        background-color: #f44336;
+    }
+    /* Responsive layout - make the columns stack on top of each other instead of next to each other */
+    
+    @media (max-width: 400px) {
+        .side,
+        .middle {
+            width: 100%;
+        }
+        .right {
+            display: none;
+        }
+    }
+</style>
+
+<body>
+    <header class="text-gray-700 bg-yellow-500 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a href="MAIN.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <img src="logo.png" height="70px" width="70px">
+
+                <span class="ml-3 text-xl">OLD-AGE STORE</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900">Books</a>
+                <a class="mr-5 hover:text-gray-900">Instruments</a>
+                <a class="mr-5 hover:text-gray-900">Account</a>
+                <a class="mr-5 hover:text-gray-900">Cart</a>
+
+            </nav>
+            <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 rounded text-base mt-4 md:mt-0">Check-Out
+            <svg fill="none" stroke="currentColor" stroke-linecap="round"  viewBox="50 50 70 70">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+    </header>
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Books</a>
+        <a href="#" class="w3-bar-item w3-button">Instruments</a>
+        <a href="#" class="w3-bar-item w3-button">New Arrival</a>
+        <hr>
+        <a href="#" class="w3-bar-item w3-button">Membership</a>
+        <a href="#" class="w3-bar-item w3-button">Account</a>
+        <a href="#" class="w3-bar-item w3-button">orders</a>
+        <a href="#" class="w3-bar-item w3-button">Gifts</a>
+        <hr>
+        <a href="#" class="w3-bar-item w3-button">Complain Centre</a>
+        <a href="#" class="w3-bar-item w3-button">About</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-gray">
+        <button class="w3-button w3-yellow w3-xlarge" onclick="w3_open()">☰</button> &nbsp;&nbsp;&nbsp;
+        <form class="search">
+            <input type="text" name="search" placeholder="Search..">
+        </form>
+        <marquee class="text-gray-500 text-yellow-400 body-font" style="padding: 1px;">
+            New Products Are Available!!! &nbsp;&nbsp;&nbsp; Check-Out-here!!! &nbsp;&nbsp;&nbsp;7 Days delivery now available all over India...
+        </marquee>
+
+
+    </div>
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+
+
+    <section class="text-gray-700 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap">
+                <img alt="Discovery" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="book8.png">
+                <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                    <h2 class="text-sm title-font text-gray-500 tracking-widest">A. C. Bhaktivedanta Swami Prabhupad </h2>
+                    <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">Bhagavad Gita Original in English - Bhagavad Gita as It is Original in English (Marathi)</h1>
+                    <div class="flex mb-4">
+                        <span class="flex items-center">
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-indigo-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                  <span class="text-gray-600 ml-3">4 Reviews</span>
+                        </span>
+                        <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+                  <a class="text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                  </a>
+                  <a class="ml-2 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>
+                  </a>
+                </span>
+                    </div>The Gita is set in a narrative framework of a dialogue between Pandava prince Arjuna and his guide and charioteer Krishna.</p>
+                    <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+
+
+                        <div class="flex">
+                            <span class="title-font font-medium text-2xl text-gray-900"> ₹200.00 <br></span>
+                        </div>
+                        <button class="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded">Buy </button><br>
+
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <hr>
+    <section class="rating">
+        <span class="heading">User Rating</span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>4.1 average based on 254 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+
+        <div class="row">
+            <div class="side">
+                <div>5 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-5"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>150</div>
+            </div>
+            <div class="side">
+                <div>4 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-4"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>63</div>
+            </div>
+            <div class="side">
+                <div>3 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-3"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>15</div>
+            </div>
+            <div class="side">
+                <div>2 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-2"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>6</div>
+            </div>
+            <div class="side">
+                <div>1 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar-container">
+                    <div class="bar-1"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>20</div>
+            </div>
+        </div>
+    </section>
+    <section class="text-gray-700 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="-my-8">
+                <div class="py-8 flex flex-wrap md:flex-no-wrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="tracking-widest font-medium title-font text-gray-900">User</span>
+                        <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">Value for money purchase</h2>
+                        <p class="leading-relaxed">This book helped me a lot to change my lifestyle i recommend to all you if you have been facing any major problem year to year once a time you must read it i guarantee it will definitely help to influence your mental skill ' thank
+                            you so much for kem jeef writing this book for motivating us ' go and purchase it online '
+
+                        </p>
+
+
+                    </div>
+                </div>
+                <div class="py-8 flex border-t-2 border-gray-200 flex-wrap md:flex-no-wrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="tracking-widest font-medium title-font text-gray-900">User</span>
+                        <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">Wonderfull like New</h2>
+                        <p class="leading-relaxed">I personally liked the book very much. Every chapter is explained properly. Multiple types of exercises are given to solve.. And quality of the pages of the book is also very good.. So thank you Old-Age Store for delivering the
+                            book on time and in good condition. #happy_customer 🤗
+                        </p>
+
+                    </div>
+                </div>
+                <div class="py-8 flex border-t-2 border-gray-200 flex-wrap md:flex-no-wrap">
+                    <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+                        <span class="tracking-widest font-medium title-font text-gray-900"> User</span>
+                        <span class="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
+                    </div>
+                    <div class="md:flex-grow">
+                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">Thanks!!!</h2>
+                        <p class="leading-relaxed">must buy for the aspirants who are searching for the books to develop their English grammar for personality as well as for various competitive exams !👏 got it delivered one date before and delivery experience was nice !
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="text-gray-700 body-font">
+        <div class="container px-5 py-10 mx-auto">
+            <div class="flex flex-col text-center content-center items-center  mb-20">
+                <a href="MAIN.html"> <img src="logo.png" class="flex flex-col content-center w-100 h-100 mb-200" height="100px" width="100px"></a>
+
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">See more from us</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Large varities of books available here.<br>Get second hand Instruments and books at reasable pridce</p>
+            </div>
+            <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/3 sm:w-1/2 p-4">
+                    <div class="flex relative">
+                        <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="book7.png">
+                        <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">Vishwas Nangare Patil</h2>
+                            <a href="book7.html">
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Mann Mein Hai Vishwas (Marathi)</h1>
+                                <p class="leading-relaxed">जेवढा मोठा संघर्ष, तेवढं मोठं यश !</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 sm:w-1/2 p-4">
+                    <div class="flex relative">
+                        <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="book6.png">
+                        <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"></h2>
+                            <a href="book6.html">
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Harmonium Double reeds, 44 keys, Fancy Vertical - Paloma</h1>
+                                <p class="leading-relaxed">Our Harmonium is made using superior quality wood, which ensures maximum durability. This Harmonium has double reeds, which delivers excellent quality sound..</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 sm:w-1/2 p-4">
+                    <div class="flex relative">
+                        <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="book5.png">
+                        <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                            <a href="book5.html">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"></h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Alter Geigenkorpus Violine Geige old Violin Violon</h1>
+                                <p class="leading-relaxed">The violin or fiddle is a string instrument belonging to the box neck lute. Your four ... 6.1 Age of the child at the beginning of violin lessons; 6.2 small violins; 6.3 History of violin pedagogy..</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 sm:w-1/2 p-4">
+                    <div class="flex relative">
+                        <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="book4.png">
+                        <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                            <a href="book4.html">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"></h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Wings of Fire by APJ Abdul Kalam Paperback</h1>
+                            </a>
+                            <p class="leading-relaxed">The Stanford family is one of the most respected in America – but behind the facade of fame and glamour lies a hidden web of blackmail, drugs and murde.When Harry Stanford, one of the wealthiest men in the world,.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 sm:w-1/2 p-4">
+                    <div class="flex relative">
+                        <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="book3.png">
+                        <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                            <a href="book3.html">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"></h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">THE STORY OF MY EXPERIMENTS WITH TRUTH</h1>
+                                <p class="leading-relaxed">Gandhi's nonviolent struggles in South Africa and India had already brought him to such a level of notoriety, adulation, and controversy that when asked to write an autobiography midway through his career, he took it as
+                                    an opportunity to explain himself. He says that he was after truth rooted in devotion to God </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 sm:w-1/2 p-4">
+                    <div class="flex relative">
+                        <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="book2.png">
+                        <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
+                            <a href="shivaji.html">
+                                <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1"></h2>
+                                <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Chatrapati Shivaji Maharaj (English)</h1>
+                                <p class="leading-relaxed">This book is an humble attempt to depict Shivaji Maharaj's biography</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <hr>
+    <footer class="text-gray-700 body-font">
+        <div class="container px-10 py-2 mx-auto flex items-center sm:flex-row flex-col">
+            <a href="MAIN.html" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img src="logo.png" height="70px" width="70px">
+                <span class="ml-3 text-xl">Old-Age Store</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Old-Age Store
+                <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Old-Age</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+    </footer>
+</body>
+
+</html>

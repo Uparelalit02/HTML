@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="text-gray-700 bg-yellow-500 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a href="MAIN.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <img src="logo.png" height="70px" width="70px">
+
+                <span class="ml-3 text-xl">OLD-AGE STORE</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900">Books</a>
+                <a class="mr-5 hover:text-gray-900">Instruments</a>
+                <a class="mr-5 hover:text-gray-900">Account</a>
+                <a class="mr-5 hover:text-gray-900">Cart</a>
+
+            </nav>
+            <button class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-green-500 rounded text-base mt-4 md:mt-0">Check-Out
+            <svg fill="none" stroke="currentColor" stroke-linecap="round"  viewBox="50 50 70 70">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+    </header>
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button">Books</a>
+        <a href="#" class="w3-bar-item w3-button">Instruments</a>
+        <a href="#" class="w3-bar-item w3-button">New Arrival</a>
+        <hr>
+        <a href="#" class="w3-bar-item w3-button">Membership</a>
+        <a href="#" class="w3-bar-item w3-button">Account</a>
+        <a href="#" class="w3-bar-item w3-button">orders</a>
+        <a href="#" class="w3-bar-item w3-button">Gifts</a>
+        <hr>
+        <a href="#" class="w3-bar-item w3-button">Complain Centre</a>
+        <a href="#" class="w3-bar-item w3-button">About</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-gray">
+        <button class="w3-button w3-yellow w3-xlarge" onclick="w3_open()">☰</button>
+        <marquee class="text-gray-500 text-yellow-400 body-font">
+            Products Are Available!!! &nbsp;&nbsp;&nbsp; Check-Out-here!!!
+        </marquee>
+
+
+    </div>
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+    <section class="text-gray-700 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book1.png">
+                    </a>
+                    <div class="mt-4">
+                        <a href="book1.html">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Used Book</h3>
+
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Engineering Mathematics I by Dr.Singaravelu</h2>
+                            <p class="mt-1">₹ 300.00 </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book2.png">
+                    </a>
+                    <div class="mt-4">
+                        <a href="shivaji.html">
+
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Bio-pic</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Chtrapati Shivaji Maharaj(English)</h2>
+                            <p class="mt-1">₹ 200.00</p>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden ">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book3.png" height="10px" width="51px">
+                    </a>
+                    <div class="mt-4">
+                        <a href="book3.html">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Used Book</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">THE STORY OF MY EXPERIMENTS WITH TRUTH</h2>
+                            <p class="mt-1">₹ 135.00</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book4.png">
+                    </a>
+                    <div class="mt-4">
+                        <a href="book4.html">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Used Book</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Wings of Fire by APJ Abdul Kalam Paperback</h2>
+                            <p class="mt-1">₹ 200.00</p>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book5.png">
+                    </a>
+                    <div class="mt-4">
+                        <a href="book5.html">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Used Instruments</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Alter Geigenkorpus Violine Geige old Violin Violon</h2>
+                            <p class="mt-1">₹ 3000.00</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book6.png">
+                    </a>
+                    <div class="mt-4">
+                        <a href="book6.html">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Used Instruments</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">
+                                IndiaMART Harmonium Double Reeds, 44 Keys, Fancy Vertical Paloma</h2>
+                            <p class="mt-1">₹ 4300</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book7.png">
+                    </a>
+                    <div class="mt-4">
+                        <a href="book7.html">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Used Book</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Mann Mein Hai Vishwas (Marathi)</h2>
+                            <p class="mt-1">₹249.00</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    <a class="block relative h-48 rounded overflow-hidden">
+                        <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="book8.png">
+                    </a>
+                    <div class="mt-4">
+                        <a href="book8.html">
+                            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY-Used Book</h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium">Bhagavad Gita Original in English - Bhagavad Gita as It is Original in English (Marathi)</h2>
+                            <p class="mt-1">₹ 200.00</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-center">
+            <div class="w3-bar">
+                <a href="#" class="w3-button w3-hover-red">&laquo;</a>
+                <a href="#" class="w3-button w3-hover-yellow">1</a>
+                <a href="#" class="w3-button w3-hover-yellow">2</a>
+                <a href="#" class="w3-button w3-hover-yellow">3</a>
+                <a href="#" class="w3-button w3-hover-yellow">4</a>
+                <a href="#" class="w3-button w3-hover-red">&raquo;</a>
+            </div>
+        </div>
+
+    </section>
+    <hr>
+    <section class="text-gray-700 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-gray-400 mb-8" viewBox="0 0 975.036 975.036">
+              <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+            </svg>
+                <p class="leading-relaxed text-lg">Best site to buy or sell your second hand books. Here our site provides you quality products and on demand garrented sells and service for you.</p>
+                <span class="inline-block h-1 w-20 rounded bg-yellow-500 mt-8 mb-6"></span>
+                <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm"></h2>
+                <p class="text-gray-500"></p>
+            </div>
+        </div>
+    </section>
+    <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center"></div>
+    <section class="text-gray-700 body-font relative">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base"> Give your feedback down below.</p>
+            </div>
+            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                <div class="flex flex-wrap -m-2">
+                    <div class="p-2 w-1/2">
+                        <input class="w-full bg-gray-100 rounded border border-yellow-200 focus:outline-none focus:border-green-500 text-base px-4 py-2" placeholder=" Your Name" type="text">
+                    </div>
+                    <div class="p-2 w-1/2">
+                        <input class="w-full bg-gray-100 rounded border border-yellow-200 focus:outline-none focus:border-green-500 text-base px-4 py-2" placeholder=" Your Email" type="email">
+                    </div>
+                    <div class="p-2 w-full">
+                        <textarea class="w-full bg-gray-100 rounded border border-yellow-200 focus:outline-none h-48 focus:border-green-500 text-base px-4 py-2 resize-none block" placeholder="                                      Message"></textarea>
+                    </div>
+                    <div class="p-2 w-full">
+                        <button class="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Submit</button>
+                    </div>
+                    <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+                        <a class="text-indigo-500">Oldagestore2020@email.com</a>
+                        <p class="leading-normal my-5">Always available for your help😊😊😊
+                            <br>
+                        </p>
+                        <span class="inline-block h-1 w-20 rounded bg-yellow-500 mt-8 mb-6"></span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <footer class="text-gray-700 body-font">
+        <div class="container px-10 py-2 mx-auto flex items-center sm:flex-row flex-col">
+            <a href="MAIN.html" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img src="logo.png" height="70px" width="70px">
+                <span class="ml-3 text-xl">Old-Age Store</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Old-Age Store
+                <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@Old-Age</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <a class="text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500">
+              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
